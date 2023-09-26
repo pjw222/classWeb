@@ -79,7 +79,6 @@ public class NewContent extends HttpServlet {
 		String content = request.getParameter("content");
 		BoardDAO dao = new BoardDAO();
 		dao.setBoard(name, boardName, content);
-		
 	}
 
 }
