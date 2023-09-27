@@ -42,7 +42,6 @@ public class TextContent extends HttpServlet {
 		BoardDAO dao = new BoardDAO();
 		
 		BoardVO board = dao.getBoard(Integer.parseInt(request.getParameter("id")));
-		
 		String html = "<html>";
 		html += "<head>";
 		html += "<meta charset='UTF-8' />";
@@ -51,20 +50,22 @@ public class TextContent extends HttpServlet {
 		html += "</title>";
 		html += "</head>";
 		html += "<body>";
-		html += "<form action='newcontent' method='post' >";
+		html += "<form action='textcontent' method='post' >";
+		html += "<input type='hidden' name='id' value='"+board.getId()+"' />";
 		html += "<input type='text' name='name' placeholder='"+board.getName()+"' />";
 		html += "<br/>";
 		html += "<input type='text' name='board-name' placeholder='"+board.getBoardName()+"' />";
 		html += "<br/>";
 		html += "<input type='text' name='content' placeholder='"+board.getContent()+"' />";
 		html += "<br/>";
-		html += "<a href='//localhost/classWeb/board' /><button>글수정하기</button></a>";
+		html += "<button>글수정하기</button>";
 		html += "</form>";
-		html += "<ol>";
+		html += "<a href='delete?id="+board.getId()+"'><button>삭제하기</button></a>";
 		html += "</body>";
 		html += "</html>";
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().append(html);
+		
 	}
 
 	/**
@@ -74,12 +75,16 @@ public class TextContent extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
+//		System.out.println(Integer.parseInt(request.getParameter("id")));
 		String name = request.getParameter("name");
 		String boardName = request.getParameter("board-name");
 		String content = request.getParameter("content");
 		BoardDAO dao = new BoardDAO();
+		System.out.println(request.getParameter("id"));
+		
 		dao.update(Integer.parseInt(request.getParameter("id")), name, boardName, content);
-		response.sendRedirect("./board");
+		
+		response.sendRedirect("board");
 	}
 
 }

@@ -96,13 +96,12 @@ public class BoardDAO {
 		try {
 			connect();
 
-			String insertQuery = "update board set name=? and board_name=? and content=? where id=? ";
-			PreparedStatement pstmt = con.prepareStatement(insertQuery);
-			pstmt.setInt(1, id);
-			pstmt.setString(2, name);
-			pstmt.setString(3, boardName);
-			pstmt.setString(4, content);
-			
+			String insertQuery = "update board set name=?,board_name=?,content=? where id=? ";
+			PreparedStatement pstmt = con.prepareStatement(insertQuery);			
+			pstmt.setString(1, name);
+			pstmt.setString(2, boardName);
+			pstmt.setString(3, content);
+			pstmt.setInt(4, id);
 			pstmt.executeUpdate();
 
 			pstmt.close();

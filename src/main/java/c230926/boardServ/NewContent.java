@@ -47,7 +47,7 @@ public class NewContent extends HttpServlet {
 		html += "<head>";
 		html += "<meta charset='UTF-8' />";
 		html += "<title>";
-		html += "게시판";
+		html += "새글작성";
 		html += "</title>";
 		html += "</head>";
 		html += "<body>";
@@ -58,7 +58,7 @@ public class NewContent extends HttpServlet {
 		html += "<br/>";
 		html += "<input type='text' name='content' placeholder='CONTENT' />";
 		html += "<br/>";
-		html += "<a href='//localhost/classWeb/board' /><button>글작성하기</button></a>";
+		html += "<button>글작성하기</button>";
 		html += "</form>";
 		html += "<ol>";
 		html += "</body>";
@@ -79,6 +79,7 @@ public class NewContent extends HttpServlet {
 		String content = request.getParameter("content");
 		BoardDAO dao = new BoardDAO();
 		dao.setBoard(name, boardName, content);
+		response.sendRedirect("board");
 	}
 
 }
