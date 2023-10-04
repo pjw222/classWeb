@@ -25,4 +25,9 @@
   	<servlet-name>bb</servlet-name>
   	<url-pattern>/second</url-pattern>
   </servlet-mapping>
+  
+  <context-param>
+	<param-name>text_xml</param-name>
+	<param-value>xml에 추가한 데이터.</param-value>
+  </context-param>
 </web-app>
