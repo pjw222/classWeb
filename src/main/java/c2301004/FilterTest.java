@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet Filter implementation class FilterTest
  */
-@WebFilter("/*")
+@WebFilter("/api")
 public class FilterTest extends HttpFilter implements Filter {
        
     /**
