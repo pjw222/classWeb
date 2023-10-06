@@ -30,5 +30,10 @@
 		<td><center><%=num1 %></center></td>
 		<td><%=hobby1 %></td>
 	</tr>
+	<tr>
+		<td><%=request.getParameter("name") %></td>
+		<td><center><%=num1 %></center></td>
+		<td><%=hobby1 %></td>
+	</tr>
 	
 </table>

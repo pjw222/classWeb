@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	session="false"
+	errorPage="../c231006/exception.jsp"
     pageEncoding="UTF-8"%>
  <!--
  	위와 같은 것들을 디렉티브 태그라고 얘기한다. HTML상의 주석
